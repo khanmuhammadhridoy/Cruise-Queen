@@ -1,12 +1,16 @@
+// first class ticket increase button
 document.getElementById('first-class-ticket-increase').addEventListener("click", function () {
     handleTicket(true, 'first-class-ticket-counter');
 })
+// first class ticket decrease button
 document.getElementById('first-class-ticket-decrease').addEventListener("click", function () {
     handleTicket(false, 'first-class-ticket-counter');
 })
+// economy ticket decrease button
 document.getElementById('economy-ticket-increase').addEventListener("click", function () {
     handleTicket(true, 'economy-ticket-counter');
 })
+// economy ticket decrease button
 document.getElementById('economy-ticket-decrease').addEventListener("click", function () {
     handleTicket(false, 'economy-ticket-counter');
 })
@@ -52,7 +56,7 @@ document.getElementById('book-now').addEventListener('click', function () {
     document.getElementById('TotalCost').innerText = document.getElementById('grand-total').innerText;
 })
 // confirm button handler
-document.getElementById('confirm').addEventListener('click', function () {    
+document.getElementById('confirm').addEventListener('click', function () {
     document.getElementById('showCost').style.display = "none";
     document.getElementById('main').style.display = "grid";
     document.getElementById('header').style.display = "block";
