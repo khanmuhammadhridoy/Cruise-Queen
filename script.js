@@ -18,9 +18,12 @@ document.getElementById('economy-ticket-decrease').addEventListener("click", fun
 function handleTicket(isIncrease, id) {
     let ticketQuantity = document.getElementById(id).value;
     let ticketQuantityNumber = parseInt(ticketQuantity);
+    // if (isIncrease == true) {
+    //     ticketQuantityNumber++;
     if (isIncrease == false && ticketQuantityNumber > 0) {
         ticketQuantityNumber--;
-    } else {
+    } 
+    else {
         ticketQuantityNumber++;
     }
     document.getElementById(id).value = ticketQuantityNumber;
@@ -45,10 +48,7 @@ function getInputValue(id) {
 }
 // book now button handler
 document.getElementById('book-now').addEventListener('click', function () {
-    document.getElementById('showCost').style.display = "block";
-    document.getElementById('main').style.display = "none";
-    document.getElementById('header').style.display = "none";
-    document.getElementById('showCost').style.display.block;
+    bookAndConfirmShowHide("block", "none", "none");
     document.getElementById('firstClassTicket').innerText = getInputValue('first-class-ticket-counter');
     document.getElementById('EconomyTicket').innerText = getInputValue('economy-ticket-counter');
     document.getElementById('SubTotalCost').innerText = document.getElementById('ticket-total').innerText;
@@ -57,12 +57,16 @@ document.getElementById('book-now').addEventListener('click', function () {
 })
 // confirm button handler
 document.getElementById('confirm').addEventListener('click', function () {
-    document.getElementById('showCost').style.display = "none";
-    document.getElementById('main').style.display = "grid";
-    document.getElementById('header').style.display = "block";
+    bookAndConfirmShowHide("none", "grid", "block");
     document.getElementById('first-class-ticket-counter').value = 0;
     document.getElementById('economy-ticket-counter').value = 0;
     document.getElementById('ticket-total').innerText = '$' + 0;
     document.getElementById('vat').innerText = '$' + 0;
     document.getElementById('grand-total').innerText = '$' + 0;
 })
+// bookAndConfirmShowHide function
+function bookAndConfirmShowHide(showCost, main, header) {
+    document.getElementById('showCost').style.display = showCost;
+    document.getElementById('main').style.display = main;
+    document.getElementById('header').style.display = header;
+}
