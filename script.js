@@ -18,12 +18,14 @@ document.getElementById('economy-ticket-decrease').addEventListener("click", fun
 function handleTicket(isIncrease, id) {
     let ticketQuantity = document.getElementById(id).value;
     let ticketQuantityNumber = parseInt(ticketQuantity);
+    // let ticketNew = ticketQuantityNumber;
+
     // if (isIncrease == true) {
     //     ticketQuantityNumber++;
     if (isIncrease == false && ticketQuantityNumber > 0) {
         ticketQuantityNumber--;
-    } 
-    else {
+        // ticketNew = ticketQuantityNumber - 1;
+    } else if (isIncrease == true) {
         ticketQuantityNumber++;
     }
     document.getElementById(id).value = ticketQuantityNumber;
